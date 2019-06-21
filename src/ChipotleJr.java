@@ -30,22 +30,8 @@ public class ChipotleJr {
 
         //creates array for which types of ingredients will go in this burrito
         //2nd for loop checks if that type of ingredient is already chosen for burrito
-//        for( int i = 0; i<numIng; i++) {
-//            do {
-//                rndIng = rnd.nextInt(numIng);
-//
-//
-//                String typeIng = ingredients[rndIng];
-//                System.out.println("ingredient is: " + rndIng + ": " + typeIng);
-//                for (int j = 0; j <= i; j++) {
-//                    if (typeIng == burrito[j]) {
-//                        break;
-//                    } else {
-//                        burrito[i] = typeIng;
-//                    }
-//                }
-//            }
-//        }
+
+
 
         for( int i = 1; i<=numIng; i++) {
             r = rnd.nextInt(numIng);
@@ -53,13 +39,20 @@ public class ChipotleJr {
             for (int j = 0; j<i; j++) {
 
                 System.out.println(j +"/"+r +"/" + typeIng);
+                System.out.println(burrito[j]);
                 if (typeIng!= burrito[j]){
                     burrito[i-1] = typeIng;
                 }
+                System.out.println(burrito[i-1]);
 
             }
             System.out.println();
+            switch(typeIng){
+                case "rice":
+                    int x = rnd.nextInt(rice.length);
+            }
         }
+
 
 
 
