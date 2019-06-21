@@ -1,0 +1,125 @@
+import java.util.Arrays;
+import java.util.Random;
+
+public class ChipotleJr {
+    public static void main(String[] args){
+
+
+        String ingredients[] = {"rice", "meat", "beans", "salsa", "veggies", "cheese", "guac", "sourcream"};
+        String[] rice = {"white", "brown", "no"};
+        String meat[]= {"chicken", "steak", "carnitas", "chorizo", "sofritas", "veggies"};
+        String beans[]= {"pinto", "black", "no"};
+        String salsa[] = {"mild", "medium", "hot", "no", "all salsa"};
+        String veggies[] = {"lettuce", "fajita veggies", "no veggies", "all veggies"};
+//        boolean cheese;
+//        boolean guac;
+//        boolean queso;
+//        boolean sourcream;
+        Random rnd = new Random();
+
+        int numIng;
+        int r;
+
+
+        //loop to find number of ingredients to go into burrito with minimum of 5
+        numIng = rnd.nextInt(4)+5;
+        String burrito[] = new String [numIng];
+//        String preburrito[] = burrito;
+        System.out.println("# of ingredients is "+ numIng);
+
+        int randoms[] = new int [numIng];
+
+        //creates array for which types of ingredients will go in this burrito
+        //2nd for loop checks if that type of ingredient is already chosen for burrito
+
+        for
+            for( int i = 1; i<=numIng; i++) {
+                r = rnd.nextInt(numIng);
+                int x;
+                String typeIng = ingredients[r];
+                for (int j = 0; j<i; j++) {
+
+    //Test                System.out.println(j +"/"+r +"/" + typeIng);
+    //                System.out.println(burrito[j]);
+                    //*kinda works* Doesn't do anything if there IS a duplicate
+                    if (typeIng!= burrito[j]){
+                        burrito[i-1] = typeIng;
+                    }
+
+
+                }
+    //            System.out.println();
+    //            System.out.println(Arrays.toString(burrito));
+                switch(typeIng){
+                    case "rice":
+                        //call getRice method
+                        x = rnd.nextInt(rice.length);
+                        String newRice = rice[x];
+                        burrito[i-1]= newRice + " rice";
+                        break;
+                    case "veggies":
+                        x = rnd.nextInt(veggies.length);
+                        String newVeggies = veggies[x];
+                        burrito[i-1]=newVeggies;
+                        break;
+                    case "meat":
+                        x = rnd.nextInt(meat.length);
+                        String newMeat = meat[x];
+                        burrito[i-1]=newMeat;
+                        break;
+                    case "beans":
+                        x = rnd.nextInt(beans.length);
+                        String newBeans = beans[x];
+                        burrito[i-1]=newBeans + " beans";
+                        break;
+                    case "salsa":
+                        x = rnd.nextInt(salsa.length);
+                        String newSalsa = salsa[x];
+                        burrito[i-1]=newSalsa + " salsa";
+                        break;
+                    case "cheese":
+                        x = rnd.nextInt(2);
+                        if(x==0){
+                            burrito[i-1]="No Cheese";
+                        } else {
+                            burrito[i-1]="Cheese";
+                        }
+                        break;
+                    case "Guac":
+                        x = rnd.nextInt(2);
+                        if(x==0){
+                            burrito[i-1]="No Guac";
+                        } else {
+                            burrito[i-1]="Guac";
+                        }
+                        break;
+                    case "Queso":
+                        x = rnd.nextInt(2);
+                        if(x==0){
+                            burrito[i-1]="No Queso";
+                        } else {
+                            burrito[i-1]="Queso";
+                        }
+                        break;
+                    case "Sour Cream":
+                        x = rnd.nextInt(2);
+                        if(x==0){
+                            burrito[i-1]="No Sour Cream";
+                        } else {
+                            burrito[i-1]="Sour Cream";
+                        }
+                        break;
+
+
+                }
+            }
+
+
+
+
+        System.out.println(Arrays.toString(burrito));
+
+
+
+    }
+}
